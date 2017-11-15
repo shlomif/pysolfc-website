@@ -7,4 +7,4 @@ download:
 	rsync -a -v --progress $(REMOTE) ./htdocs
 
 upload:
-	rsync -a -v --progress ./htdocs $(REMOTE)
+	rsync -a -v --progress ./htdocs/ $(REMOTE)
