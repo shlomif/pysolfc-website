@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>{% block title %}{% endblock %}</title>
+<meta content="PySolFC is a collection of more than 1000 solitaire card games. It is a fork of PySol Solitaire." name="description" />
+<link rel="stylesheet" href="css/styles.min.css" />
+</head>
+
+<body>
+<nav>
+    <!-- TODO : Highlight the current page using a u tag -->
+<li><a href="/"><strong>PySolFC</strong></a></li>
+<li><a href="/">Home</a></li>
+<li><a href="screenshots">Screenshots</a></li>
+<li><a href="all_games">Game Types</a></li>
+<li><a href="https://sourceforge.net/projects/pysolfc/files/">Download</a></li>
+</ul>
+</nav>
+
+<main>
+{% block body %}{% endblock %}
+</main>
+
+<footer>
+<p>
+PySolFC is distributed under the terms of the GNU General Public License.
+</p>
+<a href="https://sourceforge.net/">
+<img alt="SourceForge.net" src="https://sflogo.sourceforge.net/sflogo.php?group_id=150718&type=17" style="width: 128px; height: 32px" />
+</a>
+</footer>
+</body>
+
+</html>
