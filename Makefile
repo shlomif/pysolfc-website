@@ -7,7 +7,7 @@ HTML_PIVOT = htdocs/index.html
 
 genhtml: $(HTML_PIVOT)
 
-$(HTML_PIVOT): templates/index.html
+$(HTML_PIVOT): templates/index.html templates/screenshots.html
 	staticjinja build --outpath htdocs/
 
 # download:
