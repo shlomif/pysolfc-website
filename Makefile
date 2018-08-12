@@ -17,3 +17,6 @@ $(HTML_PIVOT): $(INPUTS)
 
 upload:
 	rsync -a -v --progress ./htdocs/ $(REMOTE)
+
+test: all
+	prove Tests/*.t
