@@ -1,0 +1,47 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+sub _exec
+{
+    my ( $cmd, $err ) = @_;
+
+    if ( system(@$cmd) )
+    {
+        die $err;
+    }
+    return;
+}
+
+_exec(
+    [
+        'cookiecutter', '-f', '--no-input',
+        'gh:shlomif/cookiecutter--shlomif-latemp-sites',
+        'project_slug=.',
+    ],
+    'cookiecutter failed.'
+);
+
+_exec( [ 'bash', 'bin/install-npm-deps.sh', ], 'npm install failed.', );
+
+=begin removed
+
+    _exec( [ "make", "--silent", "-f", "lib/make/build-deps/build-deps.mak" ],
+    "build-deps failed!" );
+_exec( [ $^X, './bin/gen-helpers-main.pl' ], "gen-helpers-main.pl failed." );
+
+=end removed
+
+=cut
+
+__END__
+
+=head1 COPYRIGHT & LICENSE
+
+Copyright 2018 by Shlomi Fish
+
+This program is distributed under the MIT / Expat License:
+L<http://www.opensource.org/licenses/mit-license.php>
+
+=cut

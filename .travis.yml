@@ -18,6 +18,7 @@ install:
     - cpanm Code::TidyAll::Plugin::Flake8 Code::TidyAll::Plugin::TSLint HTML::Spelling::Site IO::All MooX MooX::late Perl::Critic Perl::Tidy Test::Code::TidyAll Test::HTML::Recursive::DeprecatedTags Test::HTML::Tidy::Recursive::Strict Test::TrailingSpace
     - "`which python3` -m pip install --upgrade flake8 staticjinja"
 script:
+    - ./gen-helpers
     - make test
 cache:
     directories:

@@ -38,6 +38,7 @@ INPUTS = $(patsubst %,templates/%,all_games.html index.html screenshots.html _he
 
 $(HTML_PIVOT): $(INPUTS)
 	staticjinja build --outpath htdocs/
+	bin/batch-inplace-html-minifier htdocs/*.html
 
 # download:
 #	rsync -a -v --progress $(REMOTE) ./htdocs

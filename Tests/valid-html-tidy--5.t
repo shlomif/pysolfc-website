@@ -25,10 +25,9 @@ Test::HTML::Tidy::Recursive::Tidy5->new(
     {
         filename_filter => sub {
             my $fn = shift;
-            return not(
-                exists $whitelist{$fn}
-                or $fn =~ m#\A htdocs/(?: doc/ ) #x,
-            );
+            return
+                not( exists $whitelist{$fn} or $fn =~ m#\A htdocs/(?: doc/ ) #x,
+                );
         },
         targets => ['./htdocs'],
     }
