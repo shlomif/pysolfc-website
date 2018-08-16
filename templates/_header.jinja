@@ -1,3 +1,12 @@
+{% macro nav_link(url, title) %}
+<li>
+{% if url == current_url %}
+<u>{{ title }}</u>
+{% else %}
+<a href="{{ url }}">{{ title }}</a>
+{% endif %}
+</li>
+{% endmacro %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
@@ -14,9 +23,9 @@
 <!-- TODO : Highlight the current page using a u tag -->
 <ul>
 <li><a href="./"><strong>PySolFC</strong></a></li>
-<li><a href="./">Home</a></li>
-<li><a href="screenshots.html">Screenshots</a></li>
-<li><a href="all_games.html">Game Types</a></li>
+{{ nav_link('./', 'Home') }}
+{{ nav_link('screenshots.html', 'Screenshots') }}
+{{ nav_link('all_games.html', 'Game Types') }}
 <li><a href="https://sourceforge.net/projects/pysolfc/files/">Download</a></li>
 </ul>
 </nav>
