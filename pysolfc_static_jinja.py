@@ -12,4 +12,4 @@
 
 from staticjinja import make_site
 
-make_site(outpath='./htdocs/', rules=[(r'~$', lambda **args:None)]).render()
+make_site(outpath='./htdocs/', rules=[(r'^.*~$', lambda f, x:None)]).render()
