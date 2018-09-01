@@ -37,7 +37,7 @@ genhtml: $(HTML_PIVOT)
 INPUTS = $(patsubst %,templates/%,all_games.html index.html screenshots.html _header.jinja)
 
 $(HTML_PIVOT): $(INPUTS)
-	staticjinja build --outpath htdocs/
+	python3 pysolfc_static_jinja.py
 	bin/batch-inplace-html-minifier -c bin/html-min-cli-config-file.conf --keep-closing-slash htdocs/*.html
 
 # download:
