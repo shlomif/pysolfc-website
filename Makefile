@@ -31,10 +31,15 @@ USER = shlomif
 REMOTE = $(USER)@web.sourceforge.net:/home/project-web/pysolfc/htdocs/
 
 HTML_PIVOT = htdocs/index.html
+PYSOL_SOURCE = ../PySolFC
+PYSOL_GAMES_HTML_SOURCE = $(PYSOL_SOURCE)/docs/all_games.html
 
 genhtml: $(HTML_PIVOT)
 
-INPUTS = $(patsubst %,templates/%,all_games.html index.html screenshots.html _header.jinja)
+INPUTS = $(patsubst %,templates/%,all_games.html index.html screenshots.html _all_games_inc.jinja _header.jinja)
+
+templates/_all_games_inc.jinja: $(PYSOL_GAMES_HTML_SOURCE)
+	cp -f $< $@
 
 $(HTML_PIVOT): $(INPUTS)
 	python3 pysolfc_static_jinja.py
