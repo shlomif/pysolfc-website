@@ -10,7 +10,7 @@ before_install:
     - cpanm local::lib
     - eval "$(perl -Mlocal::lib=$HOME/perl_modules)"
 install:
-    - "`which python3` -m pip install --upgrade cookiecutter flake8 six staticjinja"
+    - "`which python3` -m pip install --upgrade cookiecutter flake8 random2 six staticjinja"
     - cpanm Alien::Tidyp YAML::XS
     - cpanm Alien::TidyHTML5
     - cpanm --force HTML::Tidy
