@@ -6,17 +6,15 @@ python:
     - '3.6'
 before_install:
     - sudo apt-get update -qq
-    - sudo apt-get install --no-install-recommends -y cpanminus hunspell libhunspell-dev libperl-dev myspell-en-gb node npm perl
+    - sudo apt-get install --no-install-recommends -y cmake cpanminus hunspell libhunspell-dev libperl-dev myspell-en-gb node npm perl
     - cpanm local::lib
     - eval "$(perl -Mlocal::lib=$HOME/perl_modules)"
 install:
     - "`which python3` -m pip install --upgrade cookiecutter flake8 random2 six staticjinja"
     - cpanm Alien::Tidyp YAML::XS
-    - cpanm Alien::TidyHTML5
+    - cpanm HTML::T5
     - cpanm --force HTML::Tidy
-      # - cpanm --force HTML::Tidy5
     - ( cd .. && git clone https://github.com/shlomif/PySolFC && cd PySolFC && make all_games_html )
-    - (git clone https://github.com/robrwo/html-tidy5 && cd html-tidy5 && cpanm --installdeps . && perl Makefile.PL && make && make test && make install) && rm -fr html-tidy5
     - cpanm Code::TidyAll::Plugin::Flake8 Code::TidyAll::Plugin::TSLint HTML::Spelling::Site IO::All MooX MooX::late Perl::Critic Perl::Tidy Test::Code::TidyAll Test::File::Find::CaseCollide Test::HTML::Recursive::DeprecatedTags Test::HTML::Tidy::Recursive::Strict Test::TrailingSpace
 script:
     - ./gen-helpers
