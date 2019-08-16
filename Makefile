@@ -52,4 +52,4 @@ upload:
 	rsync -a -v --progress ./htdocs/ $(REMOTE)
 
 test: all
-	prove Tests/*.t
+	prove Tests/*.{py,t}
