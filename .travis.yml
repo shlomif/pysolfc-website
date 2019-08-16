@@ -1,7 +1,5 @@
 os: linux
-dist: trusty
-# See https://github.com/travis-ci/travis-ci/issues/8378 ; remove later
-group: deprecated-2017Q3
+dist: bionic
 python:
     - '3.6'
 before_install:
@@ -10,12 +8,9 @@ before_install:
     - cpanm local::lib
     - eval "$(perl -Mlocal::lib=$HOME/perl_modules)"
 install:
-    - "`which python3` -m pip install --upgrade cookiecutter flake8 random2 six staticjinja"
-    - cpanm Alien::Tidyp YAML::XS
-    - cpanm HTML::T5
-    - cpanm --force HTML::Tidy
+    - "`which python3` -m pip install --upgrade attrs cookiecutter flake8 random2 six staticjinja"
+    - cpanm Code::TidyAll::Plugin::Flake8 Code::TidyAll::Plugin::TSLint HTML::Spelling::Site HTML::T5 IO::All MooX MooX::late Perl::Critic Perl::Tidy Test::Code::TidyAll Test::File::Find::CaseCollide Test::HTML::Recursive::DeprecatedTags Test::HTML::Tidy::Recursive::Strict Test::TrailingSpace YAML::XS
     - ( cd .. && git clone https://github.com/shlomif/PySolFC && cd PySolFC && make all_games_html )
-    - cpanm Code::TidyAll::Plugin::Flake8 Code::TidyAll::Plugin::TSLint HTML::Spelling::Site IO::All MooX MooX::late Perl::Critic Perl::Tidy Test::Code::TidyAll Test::File::Find::CaseCollide Test::HTML::Recursive::DeprecatedTags Test::HTML::Tidy::Recursive::Strict Test::TrailingSpace
 script:
     - ./gen-helpers
     - make test
