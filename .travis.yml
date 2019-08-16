@@ -8,10 +8,11 @@ before_install:
     - cpanm local::lib
     - eval "$(perl -Mlocal::lib=$HOME/perl_modules)"
 install:
-    - "`which python3` -m pip install --upgrade attrs cookiecutter flake8 pysol_cards random2 six staticjinja"
+    - "`which python3` -m pip install --upgrade attrs cookiecutter flake8 pysol_cards random2 six staticjinja vnu_validator"
     - cpanm -n Code::TidyAll::Plugin::Flake8 Code::TidyAll::Plugin::TSLint HTML::Spelling::Site HTML::T5 IO::All MooX MooX::late Perl::Critic Perl::Tidy Test::Code::TidyAll Test::File::Find::CaseCollide Test::HTML::Recursive::DeprecatedTags Test::HTML::Tidy::Recursive::Strict Test::TrailingSpace YAML::XS
     - ( cd .. && git clone https://github.com/shlomif/PySolFC && cd PySolFC && make all_games_html )
 script:
+    - export PATH="${PATH}:${PWD}/node_modules/.bin"
     - ./gen-helpers
     - make test
 cache:
