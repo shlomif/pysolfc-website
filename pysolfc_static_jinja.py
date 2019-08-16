@@ -10,6 +10,9 @@
 
 """
 
-from staticjinja import make_site
+from staticjinja import Site
 
-make_site(outpath='./htdocs/', rules=[(r'^.*~$', lambda f, x:None)]).render()
+Site.make_site(
+    outpath='./htdocs/',
+    rules=[(r'^.*~$', lambda f, x:None)]
+).render()

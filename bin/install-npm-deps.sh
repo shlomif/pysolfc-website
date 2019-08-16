@@ -9,4 +9,5 @@ npm install \
     camel-case \
     html-minifier \
     param-case \
+    prettier \
     uglify-es \
