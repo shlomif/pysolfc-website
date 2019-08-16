@@ -25,6 +25,8 @@
 # OTHER DEALINGS IN THE SOFTWARE.
 #
 
+SHELL = /bin/bash
+
 all: genhtml
 
 USER = shlomif
