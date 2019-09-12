@@ -36,7 +36,11 @@ HTML_PIVOT = htdocs/index.html
 PYSOL_SOURCE = ../PySolFC
 PYSOL_GAMES_HTML_SOURCE = $(PYSOL_SOURCE)/docs/all_games.html
 
-genhtml: $(HTML_PIVOT)
+mga8_webp_src = htdocs/img/PySolFC-mageia8-plasma5--shlomif--grandfathers-clock-lossless.webp
+mga8_webp_dest = htdocs/img/PySolFC-mageia8-plasma5--shlomif--grandfathers-clock--reduced.webp
+REDUCED_IMGS = $(mga8_webp_dest)
+
+genhtml: $(HTML_PIVOT) $(REDUCED_IMGS)
 
 INPUTS = $(patsubst %,templates/%,all_games.html index.html screenshots.html _all_games_inc.jinja _header.jinja)
 
@@ -55,3 +59,6 @@ upload:
 
 test: all
 	prove Tests/*.{py,t}
+
+$(mga8_webp_dest): $(mga8_webp_src)
+	gm convert -define webp:target-size=230000 $< $@
