@@ -17,8 +17,10 @@
 /bin/spell-checker-iface
 /bin/spell.bash
 /bin/translate-Vered-XML
+/eslint-ts.json
 /htdocs/all_games.html
 /htdocs/img/PySolFC-mageia8-plasma5--shlomif--grandfathers-clock--reduced.webp
+/htdocs/img/pysolfc-logo.webp
 /htdocs/index.html
 /htdocs/screenshots.html
 /lib/App/Deps/Verify.pm
@@ -26,12 +28,14 @@
 /lib/HTML/Latemp/DocBook/EndFormats.pm
 /lib/HTML/Latemp/DocBook/GenMake.pm
 /lib/HTML/Latemp/GenDeps.pm
+/lib/HTML/Latemp/GenDepsTT2.pm
 /lib/HTML/Latemp/GenWmlHSects.pm
 /lib/Inc/cpan_dists.wml
 /lib/Inc/html5-shims.wml
 /lib/Shlomif/Spelling/Check.pm
 /lib/Shlomif/Spelling/Iface.pm
 /lib/Shlomif/Spelling/Whitelist.pm
+/lib/h_sections.tt2
 /lib/make/build-deps/build-deps.mak
 /lib/make/docbook/sf-docbook-common.mak
 /lib/make/docbook/sf-homepage-docbook-gen.tt
