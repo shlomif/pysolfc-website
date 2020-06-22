@@ -1,6 +1,6 @@
 [PerlTidy]
 select = **/*.{pl,pm,t}
-argv = -ci=4 -bl -cti=0
+argv = -ci=4 -bl -cti=0 --character-encoding=none
 ignore = dest/**/* lib/presentations/qp/perl-for-newbies/**/* lib/fiction-xml/from-vcs/**/* lib/screenplay-xml/from-vcs/**/*
 
 [PerlCritic]

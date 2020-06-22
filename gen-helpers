@@ -35,6 +35,10 @@ _exec( [ $^X, './bin/gen-helpers-main.pl' ], "gen-helpers-main.pl failed." );
 
 =cut
 
+use Path::Tiny qw/ path /;
+
+path("Makefile")->spew_utf8("include lib/make/main.mak\n");
+
 __END__
 
 =head1 COPYRIGHT & LICENSE

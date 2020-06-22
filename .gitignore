@@ -74,3 +74,4 @@
 /node_modules/
 /package-lock.json
 /tslint.json
+Makefile
