@@ -5,6 +5,7 @@
 /Tests/spell-check-is-sorted.t
 /Tests/tidyall.t
 /bin/Run-YUI-Compressor
+/bin/add-css-classes-using-jquery.js
 /bin/batch-inplace-html-minifier
 /bin/clean-up-docbook-xhtml-1.1.xslt
 /bin/common-required-deps.yml
@@ -37,6 +38,7 @@
 /lib/Shlomif/Spelling/Whitelist.pm
 /lib/h_sections.tt2
 /lib/make/build-deps/build-deps.mak
+/lib/make/docbook/sf-docbook-common-docbook4.mak
 /lib/make/docbook/sf-docbook-common.mak
 /lib/make/docbook/sf-homepage-docbook-gen.tt
 /lib/make/shlomif_common.mak
