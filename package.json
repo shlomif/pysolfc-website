@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "camel-case": "^4.1.2",
+    "change-case": "^5.4.4",
+    "html-minifier": "^4.0.0",
+    "param-case": "^3.0.4",
+    "prettier": "^3.2.5",
+    "uglify-js": "^3.17.4"
+  }
+}

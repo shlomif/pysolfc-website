@@ -20,6 +20,7 @@
 /bin/translate-Vered-XML
 /eslint-ts.json
 /htdocs/all_games.html
+/htdocs/faq.html
 /htdocs/img/PySolFC-mageia8-plasma5--shlomif--grandfathers-clock--reduced.webp
 /htdocs/img/pysolfc-logo.webp
 /htdocs/index.html
@@ -74,6 +75,5 @@
 /lib/sgml/shlomif-docbook/xsl-stylesheets/shlomif-essays.xsl
 /lib/sgml/shlomif-docbook/xsl-stylesheets/style.css
 /node_modules/
-/package-lock.json
 /tslint.json
 Makefile
