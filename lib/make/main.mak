@@ -33,8 +33,10 @@ USER = shlomif
 REMOTE = $(USER)@web.sourceforge.net:/home/project-web/pysolfc/htdocs/
 
 HTML_PIVOT = htdocs/index.html
+HTML_DOCS = htdocs/doc
 PYSOL_SOURCE = ../PySolFC
 PYSOL_GAMES_HTML_SOURCE = $(PYSOL_SOURCE)/docs/all_games.html
+PYSOL_DOCS_DIRECTORY = $(PYSOL_SOURCE)/data/html
 
 LOGO_SRC = $(PYSOL_SOURCE)/html-src/images/high_res/logo.png
 
@@ -43,12 +45,15 @@ mga8_webp_dest = htdocs/img/PySolFC-mageia8-plasma5--shlomif--grandfathers-clock
 LOGO_DEST      = htdocs/img/pysolfc-logo.webp
 REDUCED_IMGS = $(mga8_webp_dest) $(LOGO_DEST)
 
-genhtml: $(HTML_PIVOT) $(REDUCED_IMGS)
+genhtml: $(HTML_PIVOT) $(HTML_DOCS) $(REDUCED_IMGS)
 
 INPUTS = $(patsubst %,templates/%,all_games.html index.html screenshots.html _all_games_inc.jinja _header.jinja)
 
 templates/_all_games_inc.jinja: $(PYSOL_GAMES_HTML_SOURCE)
 	cp -f $< $@
+
+htdocs/doc: $(PYSOL_DOCS_DIRECTORY)
+	cp -r -f $< $@
 
 $(HTML_PIVOT): $(INPUTS)
 	python3 pysolfc_static_jinja.py
